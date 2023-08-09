@@ -15,8 +15,8 @@ const cacheDir = 'pdf'
 const repoRoot = 'pdf'
 const publicPDFRoot = path.join(__dirname, '../assets/pdf')
 const pdfFiles = [
-  'build/pdf.js',
-  'build/pdf.worker.js',
+  'src/pdf.js',
+  'src/pdf.worker.js',
   'web/debugger.js',
   'web/viewer.js',
   'web/viewer.html',
@@ -30,7 +30,7 @@ shell.cd(path.resolve(__dirname))
 shell.rm('-rf', cacheDir)
 
 exec(
-  `git clone https://github.com/mozilla/pdf.js.git ${cacheDir} --single-branch --branch gh-pages --depth 1 --progress --verbose`,
+  `git clone https://github.com/mozilla/pdf.js.git ${cacheDir} --single-branch --depth 1 --progress --verbose`,
   'Error: Git clone failed'
 )
 
